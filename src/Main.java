@@ -67,15 +67,27 @@ public class Main {
     }
 
     private static void exercise2(Scanner i) {
-        
+        System.out.println("Введіть дійсні числа: ");
+        int a = i.nextInt();
+        int b = i.nextInt();
+        int c = i.nextInt();
+        int d = i.nextInt();
     }
 
     private static void exercise3(Scanner i) {
-        
+        int[] n = new int[]{3,7,9};
+        for (int b = 0; b < 3; b++) {
+            int number = i.nextInt();
+            for (int j : n) {
+                if (j == number) {
+                    System.out.println("Ця цифра входить в це число");
+                }
+            }
+        }
     }
 
     private static void exercise4(Scanner i) {
-        
+
     }
 
     private static void exercise5(Scanner i) {

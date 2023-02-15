@@ -14,10 +14,8 @@ public class Main {
             switch (start) {
                 case 0 -> {}
                 case 1 -> exercise1(i);
-                case 2 -> exercise2(i);
-                case 3 -> exercise3(i);
-                case 4 -> exercise4(i);
-                case 5 -> exercise5(i);
+                case 2 -> exercise3(i);
+                case 3 -> exercise4();
                 default -> System.out.println("Такої дії не існує");
             }
             if(start == 0){
@@ -66,14 +64,6 @@ public class Main {
         System.out.println("Старший той хто народився: "+ s +" на "+ people +" повних місяців");
     }
 
-    private static void exercise2(Scanner i) {
-        System.out.println("Введіть дійсні числа: ");
-        int a = i.nextInt();
-        int b = i.nextInt();
-        int c = i.nextInt();
-        int d = i.nextInt();
-    }
-
     private static void exercise3(Scanner i) {
         int[] n = new int[]{3,7,9};
         for (int b = 0; b < 3; b++) {
@@ -86,10 +76,29 @@ public class Main {
         }
     }
 
-    private static void exercise4(Scanner i) {
-
-    }
-
-    private static void exercise5(Scanner i) {
+    private static void exercise4() {
+        int x1 = 2;
+        int x2 = 4;
+        int x3 = 9;
+        int y1 = 3;
+        int y2 = 6;
+        int y3 = 1;
+        double AB = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+        double AC = Math.sqrt(Math.pow((x3 - x1), 2) + Math.pow((y3 - y1), 2));
+        double CB = Math.sqrt(Math.pow((x2 - x3), 2) + Math.pow((y2 - y3), 2));
+        if (AB + AC > CB || AB + CB > AC || AC + CB > AB){
+            System.out.print("З чих відрізків можна побудувати трикутник і він ");
+            double action1 = Math.pow(AC,2) + Math.pow(CB,2);
+            double action2 = Math.pow(AB,2) + Math.pow(CB,2);
+            double action3 = Math.pow(AC,2) + Math.pow(AB,2);
+            if( AB * AB == action1 || AC * AC == action2 || CB * CB == action3){
+                System.out.println("прямокутний");
+            } else if ( AB * AB > action1 || AC * AC > action2 || CB * CB > action3){
+                System.out.println("тупокутній");
+            }
+            else{
+                System.out.println("гострокутній");
+            }
+        }
     }
 }

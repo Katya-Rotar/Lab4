@@ -1,2 +1,40 @@
+import java.util.Scanner;
+
 public class Lab5 {
+    public static void main(String[] args) {
+        Scanner i = new Scanner(System.in);
+        while (true) {
+            System.out.println("""
+
+                    Щоб завершити виконання введіть "0"
+                    Введіть номер задачі:""");
+            int start = i.nextInt();
+            switch (start) {
+                case 0 -> {}
+                case 1 -> exercise9(i);
+                case 2 -> exercise5();
+                default -> System.out.println("Такої дії не існує");
+            }
+            if(start == 0){
+                break;
+            }
+        }
+    }
+
+    private static void exercise9(Scanner i) {
+        System.out.println("Введіть значення n");
+        int n = i.nextInt();
+        double n1 = 0;
+        for (int a = 1; a <= n; a++){
+            n1 += 1/n;
+        }
+        System.out.println(n1);
+    }
+    private static void exercise5(){
+        int s = 7;
+        for (int a = 1; a <= 9; a++){
+            int b = a * s;
+            System.out.println(a+ " x " + s +" = "+ b);
+        }
+    }
 }

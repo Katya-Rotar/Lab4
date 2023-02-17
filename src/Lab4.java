@@ -1,11 +1,13 @@
 
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 public class Lab4 {
     public static void main(String[] args) {
         Scanner i = new Scanner(System.in);
         while (true) {
-            System.out.println("""
+            out.println("""
 
                     Щоб завершити виконання введіть "0"
                     Введіть номер задачі:""");
@@ -15,7 +17,8 @@ public class Lab4 {
                 case 1 -> exercise6(i);
                 case 2 -> exercise3(i);
                 case 3 -> exercise4();
-                default -> System.out.println("Такої дії не існує");
+                case 4 -> exercise5(i);
+                default -> out.println("Такої дії не існує");
             }
             if(start == 0){
                 break;
@@ -24,7 +27,7 @@ public class Lab4 {
     }
 
 private static void exercise6(Scanner i){
-    System.out.print("""
+    out.print("""
                 Арифметичні дії:
                 1 – додавання
                 2 – віднімання
@@ -33,32 +36,32 @@ private static void exercise6(Scanner i){
                 Введіть номер арифметичної дії
                 """);
     int number = i.nextInt();
-    System.out.println("Введіть два дійсні числа");
+    out.println("Введіть два дійсні числа");
     int A = i.nextInt();
     int B = i.nextInt();
     switch (number){
         case 1 -> {
             int action1 = A + B;
-            System.out.println(action1);
+            out.println(action1);
         }
         case 2 -> {
             int action2 = A - B;
-            System.out.println(action2);
+            out.println(action2);
         }
         case 3 -> {
             int action3 = A * B;
-            System.out.println(action3);
+            out.println(action3);
         }
         case 4 -> {
             if (B == 0){
-                System.out.println("На 0 ділити не можна");
+                out.println("На 0 ділити не можна");
             }
             else {
                 int action4 = A / B;
-                System.out.println(action4);
+                out.println(action4);
             }
         }
-        default -> System.out.println("Такої дії не існує");
+        default -> out.println("Такої дії не існує");
     }
 }
     /*private static void exercise1(Scanner i) {
@@ -119,7 +122,7 @@ private static void exercise6(Scanner i){
             int number = i.nextInt();
             for (int j : n) {
                 if (j == number) {
-                    System.out.println("Ця цифра входить в це число");
+                    out.println("Ця цифра входить в це число");
                 }
             }
         }
@@ -136,18 +139,32 @@ private static void exercise6(Scanner i){
         double AC = Math.sqrt(Math.pow((x3 - x1), 2) + Math.pow((y3 - y1), 2));
         double CB = Math.sqrt(Math.pow((x2 - x3), 2) + Math.pow((y2 - y3), 2));
         if (AB + AC > CB || AB + CB > AC || AC + CB > AB){
-            System.out.print("З чих відрізків можна побудувати трикутник і він ");
+            out.print("З чих відрізків можна побудувати трикутник і він ");
             double action1 = Math.pow(AC,2) + Math.pow(CB,2);
             double action2 = Math.pow(AB,2) + Math.pow(CB,2);
             double action3 = Math.pow(AC,2) + Math.pow(AB,2);
             if( AB * AB == action1 || AC * AC == action2 || CB * CB == action3){
-                System.out.println("прямокутний");
+                out.println("прямокутний");
             } else if ( AB * AB > action1 || AC * AC > action2 || CB * CB > action3){
-                System.out.println("тупокутній");
+                out.println("тупокутній");
             }
             else{
-                System.out.println("гострокутній");
+                out.println("гострокутній");
             }
+        }
+    }
+    private static void exercise5(Scanner i){
+        out.println("Введіть номер місяця");
+        int month = i.nextInt();
+        if(month >= 1 && month <= 12) {
+            switch (month) {
+                case 1, 3, 5, 7, 8, 10, 12 -> out.println("У цьому місяці 31 днів");
+                case 2 -> out.println("У цьому місяці 28 днів");
+                case 4, 6, 9, 11 -> out.println("У цьому місяці 30 днів");
+            }
+        }
+        else {
+            out.println("Такого місяця не існує");
         }
     }
 }

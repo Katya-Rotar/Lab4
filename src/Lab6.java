@@ -14,6 +14,7 @@ public class Lab6 {
                 case 1 -> Lab5.exercise9(i);
                 case 2 -> exercise1(i);
                 case 3 -> exercise3(i);
+                case 4 -> exercise5(i);
                 default -> System.out.println("Такої дії не існує");
             }
             if(start == 0){
@@ -47,5 +48,26 @@ public class Lab6 {
             }
         }
         System.out.println(sum);
+    }
+    private static void exercise5(Scanner i){
+        System.out.println("Введіть максимальне можливе значення");
+        int n = i.nextInt();
+        System.out.println("Введіть послідовність цілих чисел");
+        int exid = 0;
+        int sum = 0;
+        int N = 0;
+        while (exid != n) {
+            int n1 = i.nextInt();
+            if (n1 >= 0) {
+                if (n1 == n) {
+                    exid = n;
+                } else {
+                    sum += n1;
+                    N++;
+                }
+            }
+        }
+        int number = sum / N;
+        System.out.println(number);
     }
 }

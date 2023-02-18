@@ -13,6 +13,7 @@ public class Lab6 {
                 case 0 -> {}
                 case 1 -> Lab5.exercise9(i);
                 case 2 -> exercise1(i);
+                case 3 -> exercise3(i);
                 default -> System.out.println("Такої дії не існує");
             }
             if(start == 0){
@@ -30,5 +31,21 @@ public class Lab6 {
             }
         }
         System.out.println(max);
+    }
+    private static void exercise3(Scanner i){
+        System.out.println("""
+                Введіть n цілих чисел
+                Щоб завершити введіть 0
+                """);
+        int exid = 1;
+        int sum = 0;
+        while (exid != 0){
+            int n = i.nextInt();
+            sum += n;
+            if (n == 0){
+                exid--;
+            }
+        }
+        System.out.println(sum);
     }
 }

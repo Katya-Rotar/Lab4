@@ -22,7 +22,7 @@ public class Lab5 {
         }
     }
 
-    private static void exercise9(Scanner i) {
+    public static void exercise9(Scanner i) {
         System.out.println("Введіть значення n");
         int n = i.nextInt();
         double n1 = 0;

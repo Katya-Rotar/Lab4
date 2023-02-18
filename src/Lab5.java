@@ -12,7 +12,8 @@ public class Lab5 {
             switch (start) {
                 case 0 -> {}
                 case 1 -> exercise9(i);
-                case 2 -> exercise5(i);
+                case 2 -> exercise2(i);
+                case 3 -> exercise4(i);
                 default -> System.out.println("Такої дії не існує");
             }
             if(start == 0){
@@ -30,7 +31,7 @@ public class Lab5 {
         }
         System.out.println(n1);
     }
-    private static void exercise5(Scanner i){
+    private static void exercise2(Scanner i){
         System.out.println("Введіть значення n");
         int n = i.nextInt();
         if(n > 1 && n < 10) {
@@ -41,5 +42,15 @@ public class Lab5 {
         }
         else
             System.out.println("n не відповідає діапазону");
+    }
+    private static void exercise4(Scanner i){
+        System.out.println("Введіть натуральні числа");
+        int x = i.nextInt();
+        int y = i.nextInt();
+        int xy = 0;
+        for(int a = 1; a <= y; a++){
+            xy += x;
+        }
+        System.out.println(xy);
     }
 }
